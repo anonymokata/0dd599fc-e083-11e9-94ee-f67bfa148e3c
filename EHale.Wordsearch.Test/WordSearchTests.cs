@@ -24,7 +24,6 @@ namespace EHale.Wordsearch.Test
         };
 
         // KHAN: (5,9),(5,8),(5,7),(5,6) - Backwards Vertical
-        // KIRK: (4,7),(3,7),(2,7),(1,7) - Backwards Horizontal
         // SULU: (3,3),(2,2),(1,1),(0,0) - Backwards Diagonal
         // UHURA: (4,0),(3,1),(2,2),(1,3),(0,4) - Backwards Diagonal
 
@@ -62,6 +61,15 @@ namespace EHale.Wordsearch.Test
             string results = board.Find("BSSH");
 
             Assert.AreEqual("BSSH: (0,3),(1,2),(2,1),(3,0)", results);
+        }
+
+        [TestMethod]
+        public void WhenWordSearchHasAHorizontalBackwardsWordItReturnsTheLocation()
+        {
+            SearchBoard board = new SearchBoard(testBoard);
+            string results = board.Find("KIRK");
+
+            Assert.AreEqual("KIRK: (4,7),(3,7),(2,7),(1,7)", results);
         }
     }
 }
