@@ -110,6 +110,19 @@ namespace EHale.Wordsearch.Entities
                         stillPossible = true;
                     }
 
+                    // Vertical Backwards
+                    if ((possible[charPosition - 1].Direction == null ||
+                        possible[charPosition - 1].Direction == Direction.VerticalBackwards) &&
+                        possible[charPosition - 1].Y - 1 >= 0 &&
+                        _board[possible[charPosition - 1].X, possible[charPosition - 1].Y - 1] == wordArray[charPosition])
+                    {
+                        possible.Add(new SearchPoint(possible[charPosition - 1].X, possible[charPosition - 1].Y - 1, wordArray[charPosition])
+                        {
+                            Direction = Direction.VerticalBackwards
+                        });
+                        stillPossible = true;
+                    }
+
                     if (!stillPossible)
                     {
                         possiblePoints.Remove(possible);
