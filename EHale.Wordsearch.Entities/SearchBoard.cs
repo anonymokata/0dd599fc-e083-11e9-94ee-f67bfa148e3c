@@ -48,27 +48,52 @@ namespace EHale.Wordsearch.Entities
                     bool stillPossible = false;
 
                     // Horizontal
-                    if(possible[charPosition - 1].X + 1 < _board.GetLength(0) &&
+                    if((possible[charPosition - 1].Direction == null || 
+                        possible[charPosition - 1].Direction == Direction.Horizontal) &&
+                        possible[charPosition - 1].X + 1 < _board.GetLength(0) &&
                         _board[possible[charPosition - 1].X + 1, possible[charPosition - 1].Y] == wordArray[charPosition])
                     {
-                        possible.Add(new SearchPoint(possible[charPosition - 1].X + 1, possible[charPosition - 1].Y, wordArray[charPosition]));
+                        possible.Add(new SearchPoint(possible[charPosition - 1].X + 1, possible[charPosition - 1].Y, wordArray[charPosition]) {
+                            Direction = Direction.Horizontal
+                        });
                         stillPossible = true;
                     }
 
                     // Vertical
-                    if (possible[charPosition - 1].Y + 1 < _board.GetLength(0) &&
+                    if ((possible[charPosition - 1].Direction == null ||
+                        possible[charPosition - 1].Direction == Direction.Vertical) &&
+                        possible[charPosition - 1].Y + 1 < _board.GetLength(0) &&
                         _board[possible[charPosition - 1].X, possible[charPosition - 1].Y + 1] == wordArray[charPosition])
                     {
-                        possible.Add(new SearchPoint(possible[charPosition - 1].X, possible[charPosition - 1].Y + 1, wordArray[charPosition]));
+                        possible.Add(new SearchPoint(possible[charPosition - 1].X, possible[charPosition - 1].Y + 1, wordArray[charPosition]) {
+                            Direction = Direction.Vertical
+                        });
                         stillPossible = true;
                     }
 
                     //Diagonally Descending
-                    if (possible[charPosition - 1].X + 1 < _board.GetLength(0) &&
+                    if ((possible[charPosition - 1].Direction == null ||
+                        possible[charPosition - 1].Direction == Direction.DiagonalDescending) &&
+                        possible[charPosition - 1].X + 1 < _board.GetLength(0) &&
                         possible[charPosition - 1].Y + 1 < _board.GetLength(0) &&
                         _board[possible[charPosition - 1].X + 1, possible[charPosition - 1].Y + 1] == wordArray[charPosition])
                     {
-                        possible.Add(new SearchPoint(possible[charPosition - 1].X + 1, possible[charPosition - 1].Y + 1, wordArray[charPosition]));
+                        possible.Add(new SearchPoint(possible[charPosition - 1].X + 1, possible[charPosition - 1].Y + 1, wordArray[charPosition]) {
+                            Direction = Direction.DiagonalDescending
+                        });
+                        stillPossible = true;
+                    }
+
+                    //Diagonally Ascending
+                    if ((possible[charPosition - 1].Direction == null ||
+                        possible[charPosition - 1].Direction == Direction.DiagonalAscending) &&
+                        possible[charPosition - 1].X + 1 < _board.GetLength(0) &&
+                        possible[charPosition - 1].Y - 1 >= 0 &&
+                        _board[possible[charPosition - 1].X + 1, possible[charPosition - 1].Y - 1] == wordArray[charPosition])
+                    {
+                        possible.Add(new SearchPoint(possible[charPosition - 1].X + 1, possible[charPosition - 1].Y - 1, wordArray[charPosition]) {
+                            Direction = Direction.DiagonalAscending
+                        });
                         stillPossible = true;
                     }
 
