@@ -63,6 +63,15 @@ namespace EHale.Wordsearch.Entities
                         stillPossible = true;
                     }
 
+                    //Diagonally Descending
+                    if (possible[charPosition - 1].X + 1 < _board.GetLength(0) &&
+                        possible[charPosition - 1].Y + 1 < _board.GetLength(0) &&
+                        _board[possible[charPosition - 1].X + 1, possible[charPosition - 1].Y + 1] == wordArray[charPosition])
+                    {
+                        possible.Add(new SearchPoint(possible[charPosition - 1].X + 1, possible[charPosition - 1].Y + 1, wordArray[charPosition]));
+                        stillPossible = true;
+                    }
+
                     if (!stillPossible)
                     {
                         possiblePoints.Remove(possible);
