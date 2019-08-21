@@ -23,6 +23,11 @@ namespace EHale.Wordsearch.Test
             "K,Y,L,B,Q,Q,P,M,D,F,C,K,E,A,B"
         };
 
+        // KHAN: (5,9),(5,8),(5,7),(5,6) - Backwards Vertical
+        // KIRK: (4,7),(3,7),(2,7),(1,7) - Backwards Horizontal
+        // SULU: (3,3),(2,2),(1,1),(0,0) - Backwards Diagonal
+        // UHURA: (4,0),(3,1),(2,2),(1,3),(0,4) - Backwards Diagonal
+
         [TestMethod]
         public void WhenWordSearchHasAHorizontalWordItReturnsTheLocation()
         {
@@ -48,6 +53,15 @@ namespace EHale.Wordsearch.Test
             string results = board.Find("SPOCK");
 
             Assert.AreEqual("SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)", results);
+        }
+
+        [TestMethod]
+        public void WhenWordSearchHasADiagonallyAscendingWordItReturnsTheLocation()
+        {
+            SearchBoard board = new SearchBoard(testBoard);
+            string results = board.Find("BSSH");
+
+            Assert.AreEqual("BSSH: (0,3),(1,2),(2,1),(3,0)", results);
         }
     }
 }
