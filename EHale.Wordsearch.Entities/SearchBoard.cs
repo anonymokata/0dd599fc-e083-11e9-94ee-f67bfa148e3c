@@ -97,6 +97,19 @@ namespace EHale.Wordsearch.Entities
                         stillPossible = true;
                     }
 
+                    // Horizontal Backwards
+                    if ((possible[charPosition - 1].Direction == null ||
+                        possible[charPosition - 1].Direction == Direction.HorizontalBackwards) &&
+                        possible[charPosition - 1].X - 1 >= 0 &&
+                        _board[possible[charPosition - 1].X - 1, possible[charPosition - 1].Y] == wordArray[charPosition])
+                    {
+                        possible.Add(new SearchPoint(possible[charPosition - 1].X - 1, possible[charPosition - 1].Y, wordArray[charPosition])
+                        {
+                            Direction = Direction.HorizontalBackwards
+                        });
+                        stillPossible = true;
+                    }
+
                     if (!stillPossible)
                     {
                         possiblePoints.Remove(possible);
