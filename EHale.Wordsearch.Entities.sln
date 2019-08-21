@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHale.Wordsearch.Entities", "EHale.Wordsearch.Entities\EHale.Wordsearch.Entities.csproj", "{38345567-C708-462D-8F3C-939B8EE773D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHale.Wordsearch.Test", "..\EHale.Wordsearch.Test\EHale.Wordsearch.Test.csproj", "{602136A2-1C81-4FAD-8C6F-98274C82D531}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38345567-C708-462D-8F3C-939B8EE773D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38345567-C708-462D-8F3C-939B8EE773D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38345567-C708-462D-8F3C-939B8EE773D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38345567-C708-462D-8F3C-939B8EE773D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{602136A2-1C81-4FAD-8C6F-98274C82D531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{602136A2-1C81-4FAD-8C6F-98274C82D531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{602136A2-1C81-4FAD-8C6F-98274C82D531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{602136A2-1C81-4FAD-8C6F-98274C82D531}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7071D804-AC17-4291-911D-72D44F342EA3}
+	EndGlobalSection
+EndGlobal
