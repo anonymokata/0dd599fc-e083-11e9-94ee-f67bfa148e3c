@@ -40,5 +40,14 @@ namespace EHale.Wordsearch.Test
 
             Assert.AreEqual("BONES: (0,6),(0,7),(0,8),(0,9),(0,10)", results);
         }
+
+        [TestMethod]
+        public void WhenWordSearchHasADiagonallyDescendingWordItReturnsTheLocation()
+        {
+            SearchBoard board = new SearchBoard(testBoard);
+            string results = board.Find("SPOCK");
+
+            Assert.AreEqual("SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)", results);
+        }
     }
 }
