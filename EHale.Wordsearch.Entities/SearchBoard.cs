@@ -45,15 +45,27 @@ namespace EHale.Wordsearch.Entities
             {
                 foreach(List<SearchPoint> possible in Enumerable.Reverse(possiblePoints))
                 {
+                    bool stillPossible = false;
+
                     // Horizontal
-                    if(possible[charPosition - 1].X + 1 >= _board.GetLength(0) ||
-                        _board[possible[charPosition - 1].X + 1, possible[charPosition - 1].Y] != wordArray[charPosition])
-                    {
-                        possiblePoints.Remove(possible);
-                    }
-                    else
+                    if(possible[charPosition - 1].X + 1 < _board.GetLength(0) &&
+                        _board[possible[charPosition - 1].X + 1, possible[charPosition - 1].Y] == wordArray[charPosition])
                     {
                         possible.Add(new SearchPoint(possible[charPosition - 1].X + 1, possible[charPosition - 1].Y, wordArray[charPosition]));
+                        stillPossible = true;
+                    }
+
+                    // Vertical
+                    if (possible[charPosition - 1].Y + 1 < _board.GetLength(0) &&
+                        _board[possible[charPosition - 1].X, possible[charPosition - 1].Y + 1] == wordArray[charPosition])
+                    {
+                        possible.Add(new SearchPoint(possible[charPosition - 1].X, possible[charPosition - 1].Y + 1, wordArray[charPosition]));
+                        stillPossible = true;
+                    }
+
+                    if (!stillPossible)
+                    {
+                        possiblePoints.Remove(possible);
                     }
                 }
             }
