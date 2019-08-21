@@ -22,8 +22,6 @@ namespace EHale.Wordsearch.Test
             "W,Z,M,I,S,U,K,U,R,B,I,D,U,X,S",
             "K,Y,L,B,Q,Q,P,M,D,F,C,K,E,A,B"
         };
-        
-        // UHURA: (4,0),(3,1),(2,2),(1,3),(0,4) - Backwards Diagonal Ascending
 
         [TestMethod]
         public void WhenWordSearchHasAHorizontalWordItReturnsTheLocation()
@@ -86,6 +84,15 @@ namespace EHale.Wordsearch.Test
             string results = board.Find("SULU");
 
             Assert.AreEqual("SULU: (3,3),(2,2),(1,1),(0,0)", results);
+        }
+
+        [TestMethod]
+        public void WhenWordSearchHasADiagonallyAscendingBackwardsWordItReturnsTheLocation()
+        {
+            SearchBoard board = new SearchBoard(testBoard);
+            string results = board.Find("UHURA");
+
+            Assert.AreEqual("UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)", results);
         }
     }
 }
