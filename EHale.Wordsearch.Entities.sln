@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHale.Wordsearch.Entities", "EHale.Wordsearch.Entities\EHale.Wordsearch.Entities.csproj", "{38345567-C708-462D-8F3C-939B8EE773D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EHale.Wordsearch.Entities", "EHale.Wordsearch.Entities\EHale.Wordsearch.Entities.csproj", "{38345567-C708-462D-8F3C-939B8EE773D0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EHale.Wordsearch.Test", "EHale.Wordsearch.Test\EHale.Wordsearch.Test.csproj", "{9A5A17A3-90A2-4914-8CB1-475FA9A489B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B02A2D9-AA1C-408D-A3E4-BE87C0BF8F33}"
+	ProjectSection(SolutionItems) = preProject
+		puzzle.txt = puzzle.txt
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHale.Wordsearch.App", "EHale.Wordsearch.App\EHale.Wordsearch.App.csproj", "{9D16B4A8-79CA-4FC9-B032-B973282B7473}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,10 @@ Global
 		{9A5A17A3-90A2-4914-8CB1-475FA9A489B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A5A17A3-90A2-4914-8CB1-475FA9A489B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A5A17A3-90A2-4914-8CB1-475FA9A489B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D16B4A8-79CA-4FC9-B032-B973282B7473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D16B4A8-79CA-4FC9-B032-B973282B7473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D16B4A8-79CA-4FC9-B032-B973282B7473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D16B4A8-79CA-4FC9-B032-B973282B7473}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
