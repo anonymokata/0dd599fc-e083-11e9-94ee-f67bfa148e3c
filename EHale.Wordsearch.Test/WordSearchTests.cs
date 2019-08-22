@@ -6,6 +6,8 @@ namespace EHale.Wordsearch.Test
     [TestClass]
     public class WordSearchTests
     {
+        private SearchBoard board;
+
         private string[] testBoard = {"U,M,K,H,U,L,K,I,N,V,J,O,C,W,E",
             "L,L,S,H,K,Z,Z,W,Z,C,G,J,U,Y,G",
             "H,S,U,P,J,P,R,J,D,H,S,B,X,T,G",
@@ -23,10 +25,15 @@ namespace EHale.Wordsearch.Test
             "K,Y,L,B,Q,Q,P,M,D,F,C,K,E,A,B"
         };
 
+        [TestInitialize]
+        public void Setup()
+        {
+            board = new SearchBoard(testBoard);
+        }
+
         [TestMethod]
         public void WhenWordSearchHasAHorizontalWordItReturnsTheLocation()
         {
-            SearchBoard board = new SearchBoard(testBoard);
             string results = board.Find("SCOTTY");
 
             Assert.AreEqual("SCOTTY: (0,5),(1,5),(2,5),(3,5),(4,5),(5,5)", results);
@@ -35,7 +42,6 @@ namespace EHale.Wordsearch.Test
         [TestMethod]
         public void WhenWordSearchHasAVerticalWordItReturnsTheLocation()
         {
-            SearchBoard board = new SearchBoard(testBoard);
             string results = board.Find("BONES");
 
             Assert.AreEqual("BONES: (0,6),(0,7),(0,8),(0,9),(0,10)", results);
@@ -44,7 +50,6 @@ namespace EHale.Wordsearch.Test
         [TestMethod]
         public void WhenWordSearchHasADiagonallyDescendingWordItReturnsTheLocation()
         {
-            SearchBoard board = new SearchBoard(testBoard);
             string results = board.Find("SPOCK");
 
             Assert.AreEqual("SPOCK: (2,1),(3,2),(4,3),(5,4),(6,5)", results);
@@ -53,7 +58,6 @@ namespace EHale.Wordsearch.Test
         [TestMethod]
         public void WhenWordSearchHasADiagonallyAscendingWordItReturnsTheLocation()
         {
-            SearchBoard board = new SearchBoard(testBoard);
             string results = board.Find("BSSH");
 
             Assert.AreEqual("BSSH: (0,3),(1,2),(2,1),(3,0)", results);
@@ -62,7 +66,6 @@ namespace EHale.Wordsearch.Test
         [TestMethod]
         public void WhenWordSearchHasAHorizontalBackwardsWordItReturnsTheLocation()
         {
-            SearchBoard board = new SearchBoard(testBoard);
             string results = board.Find("KIRK");
 
             Assert.AreEqual("KIRK: (4,7),(3,7),(2,7),(1,7)", results);
@@ -71,7 +74,6 @@ namespace EHale.Wordsearch.Test
         [TestMethod]
         public void WhenWordSearchHasAVerticalBackwardsWordItReturnsTheLocation()
         {
-            SearchBoard board = new SearchBoard(testBoard);
             string results = board.Find("KHAN");
 
             Assert.AreEqual("KHAN: (5,9),(5,8),(5,7),(5,6)", results);
@@ -80,7 +82,6 @@ namespace EHale.Wordsearch.Test
         [TestMethod]
         public void WhenWordSearchHasADiagonallyDescendingBackwardsWordItReturnsTheLocation()
         {
-            SearchBoard board = new SearchBoard(testBoard);
             string results = board.Find("SULU");
 
             Assert.AreEqual("SULU: (3,3),(2,2),(1,1),(0,0)", results);
@@ -89,7 +90,6 @@ namespace EHale.Wordsearch.Test
         [TestMethod]
         public void WhenWordSearchHasADiagonallyAscendingBackwardsWordItReturnsTheLocation()
         {
-            SearchBoard board = new SearchBoard(testBoard);
             string results = board.Find("UHURA");
 
             Assert.AreEqual("UHURA: (4,0),(3,1),(2,2),(1,3),(0,4)", results);
