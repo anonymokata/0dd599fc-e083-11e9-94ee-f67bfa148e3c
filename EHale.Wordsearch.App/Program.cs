@@ -7,7 +7,9 @@ namespace EHale.Wordsearch.App
     {
         static void Main(string[] args)
         {
-            Puzzle puzzle = new Puzzle(@"C:\temp\puzzle.txt");
+            Console.WriteLine("Please enter the full path to your text file containing a puzzle:");
+            string path = Console.ReadLine();
+            Puzzle puzzle = new Puzzle(path);
             string[] results = puzzle.Solve();
 
             foreach(string result in results)
@@ -15,6 +17,7 @@ namespace EHale.Wordsearch.App
                 Console.WriteLine(result);
             }
 
+            Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
     }
