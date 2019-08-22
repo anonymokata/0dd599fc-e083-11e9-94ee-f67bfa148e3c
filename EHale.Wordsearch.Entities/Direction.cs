@@ -9,7 +9,7 @@
         HorizontalBackwards,
         VerticalBackwards,
         DiagonalAscendingBackwards,
-        DIagonalDescendingBackwards
+        DiagonalDescendingBackwards
     
     }
 }
